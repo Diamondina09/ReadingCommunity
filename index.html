@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readers Community Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <button onclick="navigate('home')">Home</button>
+            <button onclick="navigate('quiz')">Quiz</button>
+            <button onclick="navigate('more')">More!</button>
+        </nav>
+
+        <!-- Home Page -->
+        <div id="home" class="content-box">
+            <h1>Readers Community Page</h1>
+            <p>Welcome to the Reader’s community! This website is for reading beginners, those facing a slump, or those willing to explore new books!</p>
+            <p>Check out the quiz to learn more about your interests and what genre suits you!</p>
+        </div>
+
+        <!-- Quiz Page -->
+        <div id="quiz" class="content-box hidden">
+            <h2>Quiz</h2>
+
+            <div class="question">
+                <p>1. Select a movie:</p>
+                <ul>
+                    <li>Practical Magic</li>
+                    <li>Avengers Endgame</li>
+                    <li>The Conjuring</li>
+                    <li>Ladybird</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>2. Pick a song genre:</p>
+                <ul>
+                    <li>Pop</li>
+                    <li>Rock</li>
+                    <li>Rap</li>
+                    <li>Country</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>3. What time of the day would you read?</p>
+                <ul>
+                    <li>Morning</li>
+                    <li>Afternoon</li>
+                    <li>Evening</li>
+                    <li>Night</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>4. Do you prefer shorter or longer books?</p>
+                <ul>
+                    <li>Shorter</li>
+                    <li>Longer</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>5. What perspective would you prefer to read in?</p>
+                <ul>
+                    <li>First Person</li>
+                    <li>Third Person</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>6. Character focus or Plot focus?</p>
+                <ul>
+                    <li>Character</li>
+                    <li>Plot</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>7. What do you want from a book?</p>
+                <ul>
+                    <li>Comfort</li>
+                    <li>Escape</li>
+                    <li>Knowledge</li>
+                    <li>Not sure</li>
+                    <li>All of the above</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>8. Do you read often?</p>
+                <ul>
+                    <li>Never</li>
+                    <li>Sometimes</li>
+                    <li>All the time</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Results Page -->
+        <div id="results" class="content-box hidden">
+            <h2>Results!</h2>
+            <p><strong>Book Rec:</strong> -------------------</p>
+            <p><strong>Synopsis:</strong> -------------------</p>
+            <p><strong>Other Books Like This:</strong> -------------------</p>
+        </div>
+
+        <!-- More Page -->
+        <div id="more" class="content-box hidden">
+            <h2>More!</h2>
+            <p>Random books to check out for a challenge!</p>
+            <ul>
+                <li><strong>Dracula</strong> by Bram Stoker</li>
+                <li><strong>The Picture of Dorian Gray</strong> by Oscar Wilde</li>
+                <li><strong>The Invisible Life of Addie LaRue</strong> by V.E Schwab</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript for Navigation -->
+    <script>
+        function navigate(section) {
+            document.querySelectorAll('.content-box').forEach(box => box.classList.add('hidden'));
+            document.getElementById(section).classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>

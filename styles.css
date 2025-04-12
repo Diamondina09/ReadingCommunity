@@ -1,0 +1,92 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222; /* Dark background */
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for Main Content */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #6c757d;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Navigation Buttons */
+button {
+    background-color: #4b74b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #375a94;
+}
+
+/* Main Content Box Styling */
+.content-box {
+    background-color: #b0b0b0; /* Grey box */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide other pages when navigating */
+.hidden {
+    display: none;
+}
+
+/* Quiz Question Formatting */
+.question {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.question p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.question ul {
+    padding-left: 20px;
+    margin-top: 0;
+    list-style-type: disc;
+}
+
+.question ul li {
+    margin: 5px 0;
+}
+
+/* Responsive tweaks for small screens */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+}
