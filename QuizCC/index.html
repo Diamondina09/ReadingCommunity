@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readers Community Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hidden { display: none; }
+        .content-box { padding: 20px; }
+        .question { margin-bottom: 20px; }
+        .options button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .options button.selected {
+            background-color: #d3e5ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <button onclick="navigate('home')">Home</button>
+            <button onclick="navigate('quiz')">Quiz</button>
+            <button onclick="navigate('more')">More!</button>
+        </nav>
+
+        <!-- Home Page -->
+        <div id="home" class="content-box">
+            <h1>Readers Community Page</h1>
+            <p>Welcome to the Reader’s community! This website is for reading beginners, those facing a slump, or those willing to explore new books!</p>
+            <p>Check out the quiz to learn more about your interests and what book suits you!</p>
+        </div>
+
+        <!-- Quiz Page -->
+        <div id="quiz" class="content-box hidden">
+            <h2>Quiz</h2>
+            <form id="quizForm">
+                <div class="question">
+                    <p>1. Select a movie:</p>
+                    <div class="options">
+                        <button type="button" onclick="selectAnswer(1, this, 1)">Practical Magic</button>
+                        <button type="button" onclick="selectAnswer(1, this, 2)">Avengers Endgame</button>
+                        <button type="button" onclick="selectAnswer(1, this, 3)">The Conjuring</button>
+                        <button type="button" onclick="selectAnswer(1, this, 4)">Ladybird</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>2. Pick a song genre:</p>
+                    <div class="options">
+                        <button type="button" onclick="selectAnswer(2, this, 1)">Pop</button>
+                        <button type="button" onclick="selectAnswer(2, this, 2)">Rock</button>
+                        <button type="button" onclick="selectAnswer(2, this, 3)">Rap</button>
+                        <button type="button" onclick="selectAnswer(2, this, 4)">Country</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>3. What time of the day would you read?</p>
+                    <div class="options">
+                        <button type="button" onclick="selectAnswer(3, this, 1)">Morning</button>
+                        <button type="button" onclick="selectAnswer(3, this, 2)">Afternoon</button>
+                        <button type="button" onclick="selectAnswer(3, this, 3)">Evening</button>
+                        <button type="button" onclick="selectAnswer(3, this, 4)">Night</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>4. Do you prefer shorter or longer books?</p>
+                    <div class="options">
+                        <button type="button" onclick="selectAnswer(4, this, 1)">Shorter</button>
+                        <button type="button" onclick="selectAnswer(4, this, 2)">Longer</button>
+                        <button type="button" onclick="selectAnswer(5, this, 3)">Both</button>
+                        <button type="button" onclick="selectAnswer(5, this, 4)">Not sure</button>
+                        
+                        
+                    </div>
+                </div>
+                <div class="question">
+                    <p>5. What perspective would you prefer to read in?</p>
+                    <div class="options">
+                        <button type="button" onclick="selectAnswer(5, this, 1)">First Person</button>
+                        <button type="button" onclick="selectAnswer(5, this, 2)">Third Person</button>
+                        <button type="button" onclick="selectAnswer(5, this, 3)">Both</button>
+                        <button type="button" onclick="selectAnswer(5, this, 4)">Not sure</button>
+                        
+                        
+                    </div>
+                </div>
+                <div class="question">
+                    <p>6. Character focus or Plot focus?</p>
+                    <div class="options">
+                        <button type="button" onclick="selectAnswer(6, this, 1)">Character</button>
+                        <button type="button" onclick="selectAnswer(6, this, 2)">Plot</button>
+                        <button type="button" onclick="selectAnswer(6, this, 3)">Both</button>
+                        <button type="button" onclick="selectAnswer(6, this, 3)">Not sure</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>7. What do you want from a book?</p>
+                    <div class="options">
+                        <button type="button" onclick="selectAnswer(7, this, 1)">Comfort</button>
+                        <button type="button" onclick="selectAnswer(7, this, 2)">Escape</button>
+                        <button type="button" onclick="selectAnswer(7, this, 3)">Knowledge</button>
+                        <button type="button" onclick="selectAnswer(7, this, 4)">Not sure</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>8. Do you read often?</p>
+                    <div class="options">
+                        <button type="button" onclick="selectAnswer(8, this, 1)">Never</button>
+                        <button type="button" onclick="selectAnswer(8, this, 2)">Sometimes</button>
+                        <button type="button" onclick="selectAnswer(8, this, 3)">All the time</button>
+                        <button type="button" onclick="selectAnswer(8, this, 4)">Rarely</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>9. Pick a color</p>
+                    <div class="options">
+                        <button type="button" onclick="selectAnswer(8, this, 1)">red</button>
+                        <button type="button" onclick="selectAnswer(8, this, 2)">orange</button>
+                        <button type="button" onclick="selectAnswer(8, this, 3)">purple</button>
+                        <button type="button" onclick="selectAnswer(8, this, 4)">blue</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>10. What medium would you prefer to read through?</p>
+                    <div class="options">
+                        <button type="button" onclick="selectAnswer(8, this, 1)">Physical book</button>
+                        <button type="button" onclick="selectAnswer(8, this, 2)">Digital Book copy</button>
+                        <button type="button" onclick="selectAnswer(8, this, 3)">Audiobook</button>
+                        <button type="button" onclick="selectAnswer(8, this, 4)">Not sure</button>
+                    </div>
+                </div>
+                <button type="button" onclick="showResults()">Get Results</button>
+            </form>
+        </div>
+
+        <!-- Results Page -->
+        <div id="results" class="content-box hidden">
+            <h2>Results!</h2>
+            <p><strong>Book Rec:</strong> <span id="bookName"></span></p>
+            <p><strong>Synopsis:</strong> <span id="bookSummary"></span></p>
+        </div>
+
+        <!-- More Page -->
+        <div id="more" class="content-box hidden">
+            <h2>More!</h2>
+            <p>Random books to check out for a challenge!</p>
+            <ul>
+                <li><strong>Dracula</strong> by Bram Stoker</li>
+                <li><strong>The Picture of Dorian Gray</strong> by Oscar Wilde</li>
+                <li><strong>The Invisible Life of Addie LaRue</strong> by V.E Schwab</li>
+                <li><strong></strong> by Toni Morrison</li>
+                <li><strong>We Have Always Lived in the Castle</strong> by Shirley Jackson</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript for Navigation and Quiz -->
+    <script>
+        const answers = {};
+
+        function navigate(section) {
+            document.querySelectorAll('.content-box').forEach(box => box.classList.add('hidden'));
+            document.getElementById(section).classList.remove('hidden');
+        }
+
+        function selectAnswer(qNum, btn, value) {
+            answers[qNum] = value;
+            const buttons = btn.parentElement.querySelectorAll('button');
+            buttons.forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        }
+
+        function showResults() {
+            const count = [0, 0, 0, 0];
+            Object.values(answers).forEach(val => {
+                if (val >= 1 && val <= 4) count[val - 1]++;
+            });
+            const maxIndex = count.indexOf(Math.max(...count));
+            const books = [
+                {
+                    name: "Six of Crows",
+                    summary: "A dark heist fantasy featuring a group of misfit criminals with a high-stakes mission."
+                },
+                {
+                    name: "The Hunger Games",
+                    summary: "A dystopian thriller where a girl must survive a televised death match."
+                },
+                {
+                    name: "Little Women",
+                    summary: "A heartwarming classic about four sisters growing up during the Civil War."
+                },
+                {
+                    name: "The Silent Patient",
+                    summary: "A psychological thriller about a woman who stops speaking after a traumatic event."
+                }
+            ];
+
+            document.getElementById("bookName").innerText = books[maxIndex].name;
+            document.getElementById("bookSummary").innerText = books[maxIndex].summary;
+
+            navigate("results");
+        }
+    </script>
+</body>
+</html>

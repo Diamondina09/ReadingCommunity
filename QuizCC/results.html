@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .result-box {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>Your Book Match</h2>
+        <div id="results-output"></div>
+    </div>
+
+    <script>
+        const bookResults = {
+            1: {
+                title: "Six of Crows by Leigh Bardugo",
+                summary: "A fast-paced fantasy heist story filled with morally grey characters and heart-racing action. Set in the gritty city of Ketterdam, a crew of outcasts attempt an impossible job for a huge payout."
+            },
+            2: {
+                title: "The Hunger Games by Suzanne Collins",
+                summary: "In a dystopian future, Katniss Everdeen must survive a televised fight to the death. A thrilling story of resistance, survival, and strength in the face of oppression."
+            },
+            3: {
+                title: "Little Women by Louisa May Alcott",
+                summary: "A timeless coming-of-age story that follows the March sisters as they grow up, fall in love, and discover their paths in a changing world. Full of heart, warmth, and wisdom."
+            },
+            4: {
+                title: "The Silent Patient by Alex Michaelides",
+                summary: "A psychological thriller about a woman who stops speaking after a shocking act of violence—and the therapist obsessed with uncovering her secret."
+            }
+        };
+
+        function getQueryParam(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name);
+        }
+
+        const resultKey = getQueryParam('result');
+        const result = bookResults[resultKey];
+
+        if (result) {
+            document.getElementById("results-output").innerHTML = `
+                <h3>${result.title}</h3>
+                <p>${result.summary}</p>
+            `;
+        } else {
+            document.getElementById("results-output").innerHTML = `
+                <p>Oops! Something went wrong. Please take the quiz again.</p>
+            `;
+        }
+    </script>
+</body>
+</html>

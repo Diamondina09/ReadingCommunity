@@ -1,0 +1,130 @@
+/* Importing Modern Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* General Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #1e1e2f, #2c2f4a);
+    color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for Main Content */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #292b3a;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Navigation Buttons */
+button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: url('https://example.com/book-emoji.png'), auto; /* Custom cursor: Replace URL with your own book emoji image */
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    background-color: #5753c9;
+    transform: scale(1.05);
+}
+
+/* Main Content Box Styling */
+.content-box {
+    background-color: #2c2f4a;
+    color: #f5f5f5;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hide other pages when navigating */
+.hidden {
+    display: none;
+}
+
+/* Quiz Question Formatting */
+.question {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.question p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.question ul {
+    padding-left: 20px;
+    margin-top: 0;
+    list-style-type: disc;
+}
+
+.question ul li {
+    margin: 5px 0;
+}
+
+/* Answer Options Styling */
+.options button {
+    background-color: #3e3e57;
+    color: #fff;
+    border: 1px solid #6c63ff;
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin: 5px;
+    transition: all 0.2s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    cursor: url('https://example.com/book-emoji.png'), auto; /* Custom cursor: Replace URL with your own book emoji image */
+}
+
+.options button.selected {
+    background-color: #6c63ff;
+    color: #fff;
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+.options button:hover {
+    background-color: #5753c9;
+}
+
+/* Custom cursor (book emoji) for text-based emoji */
+button:hover, .options button:hover {
+    cursor: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30"%3E%3Ctext x="0" y="20" font-size="20"%3E📚%3C/text%3E%3C/svg%3E') , auto;
+}
+
+/* Responsive tweaks for small screens */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+}

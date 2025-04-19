@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reading Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      padding: 20px;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .question {
+      margin-bottom: 30px;
+    }
+
+    .question h3 {
+      margin-bottom: 10px;
+    }
+
+    .options button {
+      display: block;
+      margin: 5px 0;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .options button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submit-btn:hover {
+      background-color: #303f9f;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>What Book Matches Your Vibe?</h1>
+
+    <form id="quiz-form" onsubmit="event.preventDefault(); showResults();">
+      <!-- QUESTIONS -->
+      <div class="question">
+        <h3>1. What's your ideal weekend?</h3>
+        <div class="options">
+          <button type="button" onclick="selectAnswer(1, this, 1)">Planning a strategic heist with friends</button>
+          <button type="button" onclick="selectAnswer(1, this, 2)">Volunteering in your community</button>
+          <button type="button" onclick="selectAnswer(1, this, 3)">Writing poetry and sipping tea</button>
+          <button type="button" onclick="selectAnswer(1, this, 4)">Watching true crime documentaries</button>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>2. Choose a motto:</h3>
+        <div class="options">
+          <button type="button" onclick="selectAnswer(2, this, 1)">"No mourners, no funerals"</button>
+          <button type="button" onclick="selectAnswer(2, this, 2)">"May the odds be ever in your favor"</button>
+          <button type="button" onclick="selectAnswer(2, this, 3)">"Hope is the thing with feathers"</button>
+          <button type="button" onclick="selectAnswer(2, this, 4)">"Silence speaks louder than words"</button>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>3. What’s your aesthetic?</h3>
+        <div class="options">
+          <button type="button" onclick="selectAnswer(3, this, 1)">Dark academia meets streetwear</button>
+          <button type="button" onclick="selectAnswer(3, this, 2)">Dystopian rebel chic</button>
+          <button type="button" onclick="selectAnswer(3, this, 3)">Cottagecore vintage</button>
+          <button type="button" onclick="selectAnswer(3, this, 4)">Moody minimalist</button>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>4. Pick a snack:</h3>
+        <div class="options">
+          <button type="button" onclick="selectAnswer(4, this, 1)">Espresso and croissant</button>
+          <button type="button" onclick="selectAnswer(4, this, 2)">Trail mix</button>
+          <button type="button" onclick="selectAnswer(4, this, 3)">Freshly baked muffins</button>
+          <button type="button" onclick="selectAnswer(4, this, 4)">Dark chocolate</button>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>5. Choose a hobby:</h3>
+        <div class="options">
+          <button type="button" onclick="selectAnswer(5, this, 1)">Lockpicking (just for fun!)</button>
+          <button type="button" onclick="selectAnswer(5, this, 2)">Archery</button>
+          <button type="button" onclick="selectAnswer(5, this, 3)">Journaling</button>
+          <button type="button" onclick="selectAnswer(5, this, 4)">Analyzing mysteries</button>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>6. Pick a vacation spot:</h3>
+        <div class="options">
+          <button type="button" onclick="selectAnswer(6, this, 1)">A misty port city</button>
+          <button type="button" onclick="selectAnswer(6, this, 2)">A revolutionary training camp</button>
+          <button type="button" onclick="selectAnswer(6, this, 3)">A countryside manor</button>
+          <button type="button" onclick="selectAnswer(6, this, 4)">An eerie quiet town</button>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>7. Favorite vibe?</h3>
+        <div class="options">
+          <button type="button" onclick="selectAnswer(7, this, 1)">Gritty & clever</button>
+          <button type="button" onclick="selectAnswer(7, this, 2)">Brave & defiant</button>
+          <button type="button" onclick="selectAnswer(7, this, 3)">Warm & emotional</button>
+          <button type="button" onclick="selectAnswer(7, this, 4)">Chilling & suspenseful</button>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>8. Choose a role model:</h3>
+        <div class="options">
+          <button type="button" onclick="selectAnswer(8, this, 1)">Kaz Brekker</button>
+          <button type="button" onclick="selectAnswer(8, this, 2)">Katniss Everdeen</button>
+          <button type="button" onclick="selectAnswer(8, this, 3)">Jo March</button>
+          <button type="button" onclick="selectAnswer(8, this, 4)">Alicia Berenson</button>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>9. How do you handle problems?</h3>
+        <div class="options">
+          <button type="button" onclick="selectAnswer(9, this, 1)">Strategize and strike</button>
+          <button type="button" onclick="selectAnswer(9, this, 2)">Face them head on</button>
+          <button type="button" onclick="selectAnswer(9, this, 3)">Talk it out with loved ones</button>
+          <button type="button" onclick="selectAnswer(9, this, 4)">Keep it inside and observe</button>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>10. Pick a symbol:</h3>
+        <div class="options">
+          <button type="button" onclick="selectAnswer(10, this, 1)">Crow</button>
+          <button type="button" onclick="selectAnswer(10, this, 2)">Mockingjay</button>
+          <button type="button" onclick="selectAnswer(10, this, 3)">Ink quill</button>
+          <button type="button" onclick="selectAnswer(10, this, 4)">Painted face</button>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">See My Book Match!</button>
+    </form>
+  </div>
+
+  <script>
+    const answers = {};
+
+    function selectAnswer(qNum, btn, optionIndex) {
+      answers[qNum] = optionIndex;
+
+      // Highlight selected option
+      const buttons = btn.parentElement.querySelectorAll("button");
+      buttons.forEach(b => b.style.backgroundColor = "#f4f4f4");
+      btn.style.backgroundColor = "#c5cae9";
+    }
+
+    function showResults() {
+      const counts = {1: 0, 2: 0, 3: 0, 4: 0};
+      for (let q in answers) {
+        counts[answers[q]]++;
+      }
+
+      let maxCount = 0;
+      let topPick = null;
+      for (let i = 1; i <= 4; i++) {
+        if (counts[i] > maxCount) {
+          maxCount = counts[i];
+          topPick = i;
+        }
+      }
+
+      window.location.href = `results.html?result=${topPick}`;
+    }
+  </script>
+</body>
+</html>
